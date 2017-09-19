@@ -9,7 +9,9 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SB Admin - Start Bootstrap Template</title>
+    <title>Sistema de RH</title>
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,14 +31,14 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <a class="navbar-brand" href="#">Entreprise RH</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
           <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
-            <a class="nav-link" href="#">
+              <a class="nav-link" href="index">
               <i class="fa fa-fw fa-dashboard"></i>
               <span class="nav-link-text">
                 Dashboard</span>
@@ -49,7 +51,7 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponents">
               <li>
-                <a href="#">Cadastrar</a>
+                  <a href="funcionario">Cadastrar</a>
               </li>
               <li>
                 <a href="#">Gerenciar</a>
@@ -63,7 +65,7 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentsone">
               <li>
-                <a href="#">Cadastrar</a>
+                <a href="cargo">Cadastrar</a>
               </li>
               <li>
                 <a href="#">Gerenciar</a>
@@ -77,7 +79,7 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentstwo">
               <li>
-                <a href="#">Cadastrar</a>
+                <a href="setor">Cadastrar</a>
               </li>
               <li>
                 <a href="#">Gerenciar</a>
@@ -91,7 +93,7 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentsthee">
               <li>
-                <a href="#">Calcular</a>
+                <a href="rescisao">Calcular</a>
               </li>
               <li>
                 <a href="#">Gerenciar</a>
@@ -119,16 +121,9 @@
     <div class="content-wrapper py-3">
 
       <div class="container-fluid">
-
-        <!-- Breadcrumbs -->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
-          </li>
-          <li class="breadcrumb-item active">My Dashboard</li>
-        </ol>
-                         
-
+       @section('principal')       
+        <span class="titulo">Painel Administrativo</span>
+       @show             
       </div>
       <!-- /.container-fluid -->
 
