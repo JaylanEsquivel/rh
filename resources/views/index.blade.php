@@ -44,7 +44,7 @@
                 Dashboard</span>
             </a>
           </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Funcionário">
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
               <i class="fa fa-fw fa-users"></i>
               <span class="nav-link-text">Funcionário</span>
@@ -54,11 +54,11 @@
                   <a href="funcionario">Cadastrar</a>
               </li>
               <li>
-                <a href="#">Gerenciar</a>
+                  <a href="funcionario-gerenciar">Gerenciar</a>
               </li>
             </ul>
           </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Cargo">
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponentsone">
               <i class="fa fa-fw fa-briefcase"></i>
               <span class="nav-link-text">Cargo</span>
@@ -68,11 +68,11 @@
                 <a href="cargo">Cadastrar</a>
               </li>
               <li>
-                <a href="#">Gerenciar</a>
+                  <a href="cargo-gerenciar">Gerenciar</a>
               </li>
             </ul>
           </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Setor">
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponentstwo">
               <i class="fa fa-fw fa-cubes"></i>
               <span class="nav-link-text">Setor</span>
@@ -82,11 +82,11 @@
                 <a href="setor">Cadastrar</a>
               </li>
               <li>
-                <a href="#">Gerenciar</a>
+                  <a href="setor-gerenciar">Gerenciar</a>
               </li>
             </ul>
           </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Rescisão">
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponentsthee">
               <i class="fa fa-fw fa-money"></i>
               <span class="nav-link-text">Rescisão</span>
@@ -96,7 +96,7 @@
                 <a href="rescisao">Calcular</a>
               </li>
               <li>
-                <a href="#">Gerenciar</a>
+                  <a href="rescisao-gerenciar">Gerenciar</a>
               </li>
             </ul>
           </li>
