@@ -123,6 +123,11 @@
       <div class="container-fluid">
        @section('principal')       
         <span class="titulo">Painel Administrativo</span>
+        <div class="row">
+            <div class="col-lg-12">
+                
+            </div>
+        </div>
        @show             
       </div>
       <!-- /.container-fluid -->

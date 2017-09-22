@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `dbrh` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `dbrh`;
+CREATE DATABASE  IF NOT EXISTS `rhdb` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `rhdb`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: dbrh
+-- Host: 127.0.0.1    Database: rhdb
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.1.21-MariaDB
 
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-20 20:56:00
+-- Dump completed on 2017-09-22 20:14:04

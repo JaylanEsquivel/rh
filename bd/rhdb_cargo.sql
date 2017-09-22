@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `dbrh` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `dbrh`;
+CREATE DATABASE  IF NOT EXISTS `rhdb` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `rhdb`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: dbrh
+-- Host: 127.0.0.1    Database: rhdb
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.1.21-MariaDB
 
@@ -28,9 +28,9 @@ CREATE TABLE `cargo` (
   `idcargo` int(11) NOT NULL AUTO_INCREMENT,
   `nomeCargo` varchar(55) NOT NULL,
   `setor_idsetor` int(11) NOT NULL,
-  PRIMARY KEY (`idcargo`,`setor_idsetor`),
-  KEY `fk_cargo_setor1_idx` (`setor_idsetor`),
-  CONSTRAINT `fk_cargo_setor1` FOREIGN KEY (`setor_idsetor`) REFERENCES `mydb`.`setor` (`idsetor`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  PRIMARY KEY (`idcargo`),
+  KEY `fk_cargo_setor_idx` (`setor_idsetor`),
+  CONSTRAINT `fk_cargo_setor` FOREIGN KEY (`setor_idsetor`) REFERENCES `setor` (`idsetor`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-20 20:56:00
+-- Dump completed on 2017-09-22 20:14:04

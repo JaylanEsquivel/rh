@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `dbrh` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `dbrh`;
+CREATE DATABASE  IF NOT EXISTS `rhdb` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `rhdb`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: dbrh
+-- Host: 127.0.0.1    Database: rhdb
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.1.21-MariaDB
 
@@ -18,33 +18,31 @@ USE `dbrh`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `funcionario`
+-- Table structure for table `rescisao`
 --
 
-DROP TABLE IF EXISTS `funcionario`;
+DROP TABLE IF EXISTS `rescisao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `funcionario` (
-  `idfuncionario` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) NOT NULL,
-  `cpf` varchar(15) NOT NULL,
-  `datadeentrada` date NOT NULL,
-  `datadesaida` date DEFAULT NULL,
-  `salario` double NOT NULL,
-  `cargo_idcargo` int(11) NOT NULL,
-  PRIMARY KEY (`idfuncionario`,`cargo_idcargo`),
-  KEY `fk_funcionario_cargo_idx` (`cargo_idcargo`),
-  CONSTRAINT `fk_funcionario_cargo` FOREIGN KEY (`cargo_idcargo`) REFERENCES `mydb`.`cargo` (`idcargo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+CREATE TABLE `rescisao` (
+  `idrescisao` int(11) NOT NULL AUTO_INCREMENT,
+  `ferias` double DEFAULT NULL,
+  `decimo` double DEFAULT NULL,
+  `multa` double DEFAULT NULL,
+  `funcionario_idfuncionario` int(11) NOT NULL,
+  PRIMARY KEY (`idrescisao`),
+  KEY `fk_rescisao_funcionario1_idx` (`funcionario_idfuncionario`),
+  CONSTRAINT `fk_rescisao_funcionario1` FOREIGN KEY (`funcionario_idfuncionario`) REFERENCES `funcionario` (`idfuncionario`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `funcionario`
+-- Dumping data for table `rescisao`
 --
 
-LOCK TABLES `funcionario` WRITE;
-/*!40000 ALTER TABLE `funcionario` DISABLE KEYS */;
-/*!40000 ALTER TABLE `funcionario` ENABLE KEYS */;
+LOCK TABLES `rescisao` WRITE;
+/*!40000 ALTER TABLE `rescisao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rescisao` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -56,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-20 20:56:00
+-- Dump completed on 2017-09-22 20:14:04

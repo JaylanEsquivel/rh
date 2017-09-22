@@ -3,7 +3,7 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class Rescisao {
+class Rescisao extends Model {
     protected $table = 'rescisao';
     protected $primarykey = 'idrescisao';
     public    $timestamps = false;
