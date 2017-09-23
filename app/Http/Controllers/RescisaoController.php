@@ -6,6 +6,12 @@ use App\Http\Models\Rescisao;
 
 class RescisaoController extends Controller {
 
+    public function ExibirRescisao() {
+        return view('rescisao');
+    }
+    public function ExibirRescisaoGerenciar() {
+        return view('rescisao-gerenciar');
+    }
     public function RegistrarRescisao() {
         
     }

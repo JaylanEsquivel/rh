@@ -1,7 +1,7 @@
 @extends('index')
   @section('principal')
   <span class="titulo">Funcionario</span><br><br>
-  <div class="row">
+  <div class="row espaço">
       <div class="col-lg-12">
   <form action="/rh/public/funcionario/form_funcionario" method="post" >
   <input type="hidden" name="_token" value="{{csrf_token()}}"/>

@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/rh/resources/views/cargo.blade.php</file>
+            <file>file:/C:/xampp/htdocs/rh/resources/views/editarsetor.blade.php</file>
             <file>file:/C:/xampp/htdocs/rh/routes/web.php</file>
-            <file>file:/C:/xampp/htdocs/rh/resources/views/setor.blade.php</file>
-            <file>file:/C:/xampp/htdocs/rh/app/Http/Controllers/FuncionarioController.php</file>
-            <file>file:/C:/xampp/htdocs/rh/resources/views/funcionario.blade.php</file>
+            <file>file:/C:/xampp/htdocs/rh/app/Models/Setor.php</file>
+            <file>file:/C:/xampp/htdocs/rh/app/Http/Controllers/SetorController.php</file>
         </group>
     </open-files>
 </project-private>

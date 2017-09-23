@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 23-Set-2017 às 01:11
+-- Generation Time: 23-Set-2017 às 08:22
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -74,6 +74,17 @@ CREATE TABLE `setor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Extraindo dados da tabela `setor`
+--
+
+INSERT INTO `setor` (`idsetor`, `nomeSetor`) VALUES
+(1, 'Desenvolvimento'),
+(2, 'Financeiro'),
+(3, 'Comercial'),
+(4, 'Recursos Humanos'),
+(5, 'Operacional');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -127,7 +138,7 @@ ALTER TABLE `rescisao`
 -- AUTO_INCREMENT for table `setor`
 --
 ALTER TABLE `setor`
-  MODIFY `idsetor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idsetor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Constraints for dumped tables
 --
