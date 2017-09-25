@@ -1,0 +1,23 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+    // Configuração padrão.
+    //$("#currency").maskMoney();
+    // Configuração para campos de Real.
+    $("#VALOR").maskMoney({showSymbol:true, symbol:"", decimal:",", thousands:"."});
+	});
+</script>
+
+                               <div id="ResultUpdateValorTraslado">
+                                    <div class="form_inputs clearfix">
+                                        <div class="row-fluid">
+                                            <div class="span3">
+                                                <label class="control-label">VALOR: R$ </label>
+                                            </div>
+
+                                            <div class="span9">
+                                                <input type="text" name="VALOR" id="VALOR" class="span10"
+                                                 style="background:#FFF;" value="<?php echo $VALOR; ?>" />
+                                                 <br />
+												<button class="btn btn-success"
+                                                onclick="UpdateValorTraslado('<?php echo $CDTRASLADO; ?>');" type="button">
+                                                Salvar</button>
