@@ -6,7 +6,7 @@
    <form action="/rh/public/cargo/form_cargo" method="post">
   <input type="hidden" name="_token" value="{{csrf_token()}}"/>
   <div class="form-group">
-    <label for="exampleInputEmail1">Nome:</label>
+    <label for="nomeCargo">Nome:</label>
     <input type="text" class="form-control" id="nomeCargo" name="nomeCargo" aria-describedby="emailHelp" placeholder="Analista de Software">
   </div>
   <div class="form-group">

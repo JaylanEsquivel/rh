@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Cargo;
+use App\Models\Cargo;
+use App\Models\Setor;
+
 
 class CargoController extends Controller{
 
@@ -14,6 +16,14 @@ class CargoController extends Controller{
         return view('cargo-gerenciar');
     }
     public function CadastrarCargo() {
+        $nomecargo = \Request::input('nomeCargo');
+        $setorid = \Request::input('setorid');
         
+        $novo = new Cargo;
+        $novo->nomeCargo = $nomecargo;
+        $novo->setor_idsetor = $setorid;
+        $novo->save();
+        
+        return redirect('/cargo');
     }
 }
