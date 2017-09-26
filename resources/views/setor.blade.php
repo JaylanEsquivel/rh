@@ -3,7 +3,7 @@
   <span class="titulo">Setor</span><br><br>
   <div class="row espaço">
       <div class="col-lg-12">
-<form action="/rh/public/setor/form_setor" method="post">
+<form action="{{url('/setor/form_setor')}}" method="post">
          <input type="hidden" name="_token" value="{{csrf_token()}}"/>
   <div class="form-group">
     <label for="setor">Nome:</label>

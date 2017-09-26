@@ -122,19 +122,27 @@
     <div class="content-wrapper py-3">
 
       <div class="container-fluid">
-       <span class="titulo">Edição de Setor</span><br><br>
+       <span class="titulo">Cargo</span><br><br>
   <div class="row espaço">
       <div class="col-lg-12">
-<form action="/rh/public/setor-gerenciar/editarsetor/form_setor_editar/{{$setores->idsetor}}" method="post">
-         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+   <form action="/rh/public/cargo/form_cargo/{{$cargos->idcargo}}" method="post">
+  <input type="hidden" name="_token" value="{{csrf_token()}}"/>
   <div class="form-group">
-    <label for="setor">Nome:</label>
-    <input type="text" class="form-control" id="setor" name="setor" value="{{$setores->nomeSetor}}">
+    <label for="nomeCargo">Nome:</label>
+    <input type="text" class="form-control" id="nomeCargo" name="nomeCargo" aria-describedby="emailHelp" value="{{$cargos->nomeCargo}}">
   </div>
-  <button type="submit" class="btn btn-success">Salvar Alterações</button>
+  <div class="form-group">
+    <label for="exampleSelect1">Setor:</label>
+    <select class="form-control" id="setorid" name="setorid">
+     <!-- @foreach($setores as $st)  
+      <option value="{{$st->idsetor}}">{{$st->nomeSetor}}</option>
+      @endforeach -->
+    </select>
+  </div>
+  <button type="submit" class="btn btn-success">Cadastrar</button>
 </form>
       </div>
-  </div>            
+  </div>      
       </div>
       <!-- /.container-fluid -->
 

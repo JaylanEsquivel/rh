@@ -12,13 +12,15 @@
     </tr>
   </thead>
   <tbody>
+    @foreach ($cargos as $cr)  
     <tr>
-      <th scope="row">1</th>
-      <th>Analista</th>
+      <th scope="row">{{$cr->idcargo}}</th>
+      <th>{{$cr->nomeCargo}}</th>
       <td style="text-align: center">
-          <a href="#" class="btn btn-info">Editar</a>&nbsp;<a href="#" class="btn btn-danger">Deleta</a>
+          <a href="cargo-gerenciar/editarcargo/{{$cr->idcargo}}" class="btn btn-info">Editar</a>&nbsp;<a href="/cargo-gerenciar/deletarcargo/{{$cr->idcargo}}" class="btn btn-danger">Deleta</a>
       </td>
     </tr>
+    @endforeach
   </tbody>
 </table>
       </div>

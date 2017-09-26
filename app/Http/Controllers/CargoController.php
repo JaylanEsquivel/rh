@@ -13,7 +13,8 @@ class CargoController extends Controller{
         return view('cargo', ['setores' => $setores]);
     }
     public function ExibirCargoGerenciar() {
-        return view('cargo-gerenciar');
+        $cargo = Cargo::all();
+        return view('cargo-gerenciar', ['cargos' => $cargo]);
     }
     public function CadastrarCargo() {
         $nomecargo = \Request::input('nomeCargo');
@@ -25,6 +26,10 @@ class CargoController extends Controller{
         $novo->save();
         
         return redirect('/cargo');
+    }
+    public function EditarCargo($id) {
+        $cargo = Cargo::find($id);
+        return view('editarcargo', ['cargos' => $cargo]);        
     }
     public function DeletarCargo(){
         
