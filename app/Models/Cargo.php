@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cargo extends Model {
     protected $table = 'cargo';
-    protected $primarykey = 'idcargo';
+    protected $primaryKey = 'idcargo';
     public    $timestamps = false;
     
     public function funcionario() {

@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rescisao extends Model {
     protected $table = 'rescisao';
-    protected $primarykey = 'idrescisao';
+    protected $primaryKey = 'idrescisao';
     public    $timestamps = false;
     
     public function rescisao() {

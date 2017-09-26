@@ -35,6 +35,9 @@ class FuncionarioController extends Controller {
         return redirect('/funcionario');
         
     }
+    public function Deletarfuncionario() {
+        
+    }
     
     
 }

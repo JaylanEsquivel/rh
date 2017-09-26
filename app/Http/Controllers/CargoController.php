@@ -26,4 +26,7 @@ class CargoController extends Controller{
         
         return redirect('/cargo');
     }
+    public function DeletarCargo(){
+        
+    }
 }

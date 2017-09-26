@@ -26,4 +26,21 @@ class SetorController extends Controller {
         $setor = Setor::find($id);
         return view('editarsetor', ['setores' => $setor]);        
     }
+    public function DeletarSetor($id) {
+        $setor = Setor::find($id);
+        
+        $setor->delete();      
+        return redirect('/setor-gerenciar');
+    }
+    public function UpdateSetor($id) {
+        $setor = Setor::find($id);
+        
+        $nome = \Request::input('setor');
+        
+        $setor->nomeSetor = $nome;
+        
+        $setor->save();
+        
+        return redirect('\setor-gerenciar');
+    }
 }
