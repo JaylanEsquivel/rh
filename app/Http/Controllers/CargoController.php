@@ -31,7 +31,11 @@ class CargoController extends Controller{
         $cargo = Cargo::find($id);
         return view('editarcargo', ['cargos' => $cargo]);        
     }
-    public function DeletarCargo(){
+    public function DeletarCargo($id){
+        $cargo = Cargo::find($id);
+        
+        $cargo->delete();      
+        return redirect('/cargo-gerenciar');
         
     }
 }

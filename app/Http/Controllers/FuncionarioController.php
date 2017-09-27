@@ -13,7 +13,8 @@ class FuncionarioController extends Controller {
         return view('funcionario', ['cargos' => $cargos]);
     }
     public function ExibirFuncionarioGerenciar() {
-        return view('funcionario-gerenciar');
+        $funcionario = Funcionario::all();
+        return view('funcionario-gerenciar', ['funcionarios' => $funcionario ]);
     }
     public function CadastrarFuncionario() {
         $input = \Request::all();
@@ -35,8 +36,32 @@ class FuncionarioController extends Controller {
         return redirect('/funcionario');
         
     }
-    public function Deletarfuncionario() {
+    public function UpdateFuncionario($id) {
+        $novo = Funcionario::find($id);
         
+        $input = \Request::all();
+        $nome = $input['nomeFunc'];
+        $cpf = $input['cpf'];
+        $salario = $input['sal'];
+        $data = $input['dataent'];
+        $cargo = $input['cargo'];
+        
+        $novo->nome = $nome;
+        $novo->cpf = $cpf;
+        $novo->salario = $salario;
+        $novo->datadeentrada = $data;
+        $novo->cargo_idcargo = $cargo;
+        
+        $novo->save();
+        
+        return redirect('/funcionario');
+        
+    }
+    public function Deletarfuncionario($id) {
+        $funcionario = Funcionario::find($id);
+        
+        $funcionario->delete();      
+        return redirect('/funcionario-gerenciar');
     }
     
     

@@ -10,23 +10,27 @@
       <th>Nome</th>
       <th>Cpf</th>
       <th>Salário</th>
+      <th>Cargo</th>
       <th>Data de entrada</th>
       <th>Data de saida</th>
       <th>Ações</th>
     </tr>
   </thead>
   <tbody>
+   @foreach ($funcionarios as $fc)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
+      <th scope="row">{{$fc->idfuncionario}}</th>
+      <td>{{$fc->nome}}</td>
+      <td>{{$fc->cpf}}</td>
+      <td>{{$fc->salario}}</td>
+      <td>{{$fc->cargo_idcargo}}</td>
+      <td>{{$fc->datadeentrada}}</td>
+      <td>{{$fc->datadesaida}}</td>
       <td style="text-align: center">
-          <a href="#" class="btn btn-info">Editar</a>&nbsp;<a href="#" class="btn btn-danger">Deleta</a>
+          <a href="funcionario-gerenciar/editarfuncionario/{{$fc->idfuncionario}}" class="btn btn-info">Editar</a>&nbsp;<a href="funcionario-gerenciar/deletarfuncionario/{{$fc->idfuncionario}}" class="btn btn-danger">Deleta</a>
       </td>
     </tr>
+   @endforeach
   </tbody>
 </table>
       </div>
