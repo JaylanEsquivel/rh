@@ -10,4 +10,7 @@ class Cargo extends Model {
     public function funcionario() {
           return $this->hasMany('App\Models\Funcionario');
     }
+    public function setor() {
+        return $this->belongsTo('App\Models\setor');        
+    }
 }

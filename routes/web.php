@@ -5,7 +5,7 @@ Route::get('/', function () {
 });
 //GET'S
 
-Route::get('/index','ViewController@Exibirindex');
+Route::get('/index','ViewController@Exibirprincipal');
 
 Route::get('/funcionario','FuncionarioController@ExibirFuncionario');
 Route::get('/funcionario-gerenciar','FuncionarioController@ExibirFuncionarioGerenciar');

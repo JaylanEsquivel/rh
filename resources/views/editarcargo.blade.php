@@ -25,6 +25,9 @@
 
     <!-- Custom styles for this template -->
     <link href="../../css/sb-admin.css" rel="stylesheet">
+    
+                <script src="../../js/respostas.js"></script>
+
 
   </head>
 
@@ -32,17 +35,17 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-      <a class="navbar-brand" href="#">Entreprise RH</a>
+      <a class="navbar-brand" href="{{url('index')}}">Entreprise RH</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
           <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
-              <a class="nav-link" href="index">
+              <a class="nav-link" href="{{url('index')}}">
               <i class="fa fa-fw fa-dashboard"></i>
               <span class="nav-link-text">
-                Dashboard</span>
+                Painel de Controle</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Funcionário">
@@ -125,7 +128,7 @@
        <span class="titulo">Cargo</span><br><br>
   <div class="row espaço">
       <div class="col-lg-12">
-   <form action="/rh/public/cargo/form_cargo/{{$cargos->id}}" method="post">
+   <form action="/rh/public/cargo-gerenciar/editarcargo/form_cargo_editar/{{$cargos->id}}" method="post">
   <input type="hidden" name="_token" value="{{csrf_token()}}"/>
   <div class="form-group">
     <label for="nomeCargo">Nome:</label>
@@ -143,7 +146,7 @@
       @endforeach
     </select>
   </div>
-  <button type="submit" class="btn btn-success">Cadastrar</button>
+  <button type="submit" class="btn btn-success" onclick=" return update();">Salvar Alterações</button>
 </form>
       </div>
   </div>      

@@ -27,6 +27,19 @@ class CargoController extends Controller{
         
         return redirect('/cargo');
     }
+    public function UpdateCargo($id) {
+        $cargo = Cargo::find($id);
+        
+        $nome = \Request::input('nomeCargo');
+        $setorid = \Request::input('setorid');
+        
+        $cargo->nomeCargo = $nome;
+        $cargo->setor_id = $setorid;
+        $cargo->save();
+        
+        return redirect('/cargo-gerenciar');
+        
+    }
     public function EditarCargo($id) {
         $setor = Setor::all();
         $cargo = Cargo::find($id);

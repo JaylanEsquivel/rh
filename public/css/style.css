@@ -1,6 +1,24 @@
 .titulo{
     font-size: 25px;
 }
+.sub-titulo{
+    font-size: 18px;
+    color:#3399ff;
+}
 .espaço{
     padding-bottom: 100px;
+}
+.cores{
+    color: #fff;
+}
+.titulo-resumo{
+    font-size: 30px;
+    font-weight: bold;    
+}
+span.titulo-text{
+    font-size: 17px;
+    float: right;
+}
+.sps{
+    padding-top: 15px; padding-bottom: 15px
 }

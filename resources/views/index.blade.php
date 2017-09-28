@@ -25,6 +25,9 @@
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin.css" rel="stylesheet">
+    
+        <script src="js/respostas.js"></script>
+
 
   </head>
 
@@ -42,7 +45,7 @@
               <a class="nav-link" href="index">
               <i class="fa fa-fw fa-dashboard"></i>
               <span class="nav-link-text">
-                Dashboard</span>
+                Painel de Controle</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Funcionário">
@@ -80,10 +83,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentstwo">
               <li>
-                <a href="setor">Cadastrar</a>
+                <a href="{{url('setor')}}">Cadastrar</a>
               </li>
               <li>
-                  <a href="setor-gerenciar">Gerenciar</a>
+                  <a href="{{url('setor-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>
@@ -94,10 +97,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentsthee">
               <li>
-                <a href="rescisao">Calcular</a>
+                <a href="{{url('rescisao')}}">Calcular</a>
               </li>
               <li>
-                  <a href="rescisao-gerenciar">Gerenciar</a>
+                  <a href="{{url('rescisao-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>
@@ -123,12 +126,7 @@
 
       <div class="container-fluid">
        @section('principal')       
-        <span class="titulo">Painel Administrativo</span>
-        <div class="row">
-            <div class="col-lg-12">
-                
-            </div>
-        </div>
+       
        @show             
       </div>
       <!-- /.container-fluid -->
@@ -175,6 +173,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/sb-admin.min.js"></script>
+    
 
   </body>
 

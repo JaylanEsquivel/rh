@@ -59,7 +59,7 @@ class FuncionarioController extends Controller {
         
         $novo->save();
         
-        return redirect('/funcionario');
+        return redirect('/funcionario-gerenciar');
         
     }
     public function Deletarfuncionario($id) {
@@ -68,6 +68,4 @@ class FuncionarioController extends Controller {
         $funcionario->delete();      
         return redirect('/funcionario-gerenciar');
     }
-    
-    
 }

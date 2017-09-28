@@ -27,7 +27,7 @@
       <td>{{$fc->datadeentrada}}</td>
       <td>{{$fc->datadesaida}}</td>
       <td style="text-align: center">
-          <a href="funcionario-gerenciar/editarfuncionario/{{$fc->id}}" class="btn btn-info">Editar</a>&nbsp;<a href="funcionario-gerenciar/deletarfuncionario/{{$fc->id}}" class="btn btn-danger">Deleta</a>
+          <a href="funcionario-gerenciar/editarfuncionario/{{$fc->id}}" class="btn btn-info" title="EDITAR"><img src="{{url('img/Pencil.png')}}" width="25" class="img-responsive" /></a>&nbsp;<a href="funcionario-gerenciar/deletarfuncionario/{{$fc->id}}" class="btn btn-danger" title="EXCLUIR" onclick=" return deleta();"><img src="{{url('img/lixe.png')}}" width="25" class="img-responsive" /></a>
       </td>
     </tr>
    @endforeach

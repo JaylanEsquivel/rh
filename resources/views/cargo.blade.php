@@ -17,7 +17,7 @@
       @endforeach
     </select>
   </div>
-  <button type="submit" class="btn btn-success">Cadastrar</button>
+  <button type="submit" class="btn btn-success" onclick="cadastrado()">Cadastrar</button>
 </form>
       </div>
   </div>

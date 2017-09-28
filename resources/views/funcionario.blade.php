@@ -1,6 +1,6 @@
 @extends('index')
   @section('principal')
-  <span class="titulo">Funcionario</span><br><br>
+  <span class="titulo">Funcionário</span><br><br>
   <div class="row espaço">
       <div class="col-lg-12">
   <form action="/rh/public/funcionario/form_funcionario" method="post" >
@@ -11,7 +11,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">CPF:</label>
-    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="99999999999">
+    <input type="text" class="form-control" id="cpf" name="cpf" maxlength="14" placeholder="99999999999">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Salário:</label>
@@ -25,11 +25,11 @@
     <label for="exampleSelect1">Cargo:</label>
     <select class="form-control" id="cargo" name="cargo">
       @foreach($cargos as $cr)  
-       <option value="{{$cr->idcargo}}">{{$cr->nomeCargo}}</option>
+       <option value="{{$cr->id}}">{{$cr->nomeCargo}}</option>
       @endforeach
     </select>
   </div>
-  <button type="submit" class="btn btn-success">Cadastrar</button>
+  <button type="submit" class="btn btn-success" onclick="cadastrado()">Cadastrar</button>
 </form>
       </div>
   </div>

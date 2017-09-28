@@ -25,6 +25,9 @@
 
     <!-- Custom styles for this template -->
     <link href="../../css/sb-admin.css" rel="stylesheet">
+    
+            <script src="../../js/respostas.js"></script>
+
 
   </head>
 
@@ -32,17 +35,17 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-      <a class="navbar-brand" href="#">Entreprise RH</a>
+      <a class="navbar-brand" href="{{url('index')}}">Entreprise RH</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
           <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
-              <a class="nav-link" href="index">
+              <a class="nav-link" href="{{url('index')}}">
               <i class="fa fa-fw fa-dashboard"></i>
               <span class="nav-link-text">
-                Dashboard</span>
+                Painel de Controle</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Funcionário">
@@ -52,10 +55,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponents">
               <li>
-                  <a href="funcionario">Cadastrar</a>
+                  <a href="{{url('funcionario')}}">Cadastrar</a>
               </li>
               <li>
-                  <a href="funcionario-gerenciar">Gerenciar</a>
+                  <a href="{{url('funcionario-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>
@@ -66,10 +69,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentsone">
               <li>
-                <a href="cargo">Cadastrar</a>
+                <a href="{{url('cargo')}}">Cadastrar</a>
               </li>
               <li>
-                  <a href="cargo-gerenciar">Gerenciar</a>
+                  <a href="{{url('cargo-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>
@@ -80,10 +83,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentstwo">
               <li>
-                <a href="setor">Cadastrar</a>
+                <a href="{{url('setor')}}">Cadastrar</a>
               </li>
               <li>
-                  <a href="setor-gerenciar">Gerenciar</a>
+                  <a href="{{url('setor-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>
@@ -94,10 +97,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentsthee">
               <li>
-                <a href="rescisao">Calcular</a>
+                <a href="{{url('rescisao')}}">Calcular</a>
               </li>
               <li>
-                  <a href="rescisao-gerenciar">Gerenciar</a>
+                  <a href="{{url('rescisao-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>
@@ -131,7 +134,7 @@
     <label for="setor">Nome:</label>
     <input type="text" class="form-control" id="setor" name="setor" value="{{$setores->nomeSetor}}">
   </div>
-  <button type="submit" class="btn btn-success">Salvar Alterações</button>
+  <button type="submit" class="btn btn-success" onclick="update();">Salvar Alterações</button>
 </form>
       </div>
   </div>            
