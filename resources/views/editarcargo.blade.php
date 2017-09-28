@@ -52,10 +52,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponents">
               <li>
-                  <a href="funcionario">Cadastrar</a>
+                  <a href="{{url('funcionario')}}">Cadastrar</a>
               </li>
               <li>
-                  <a href="funcionario-gerenciar">Gerenciar</a>
+                  <a href="{{url('funcionario-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>
@@ -66,10 +66,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentsone">
               <li>
-                <a href="cargo">Cadastrar</a>
+                <a href="{{url('cargo')}}">Cadastrar</a>
               </li>
               <li>
-                  <a href="cargo-gerenciar">Gerenciar</a>
+                  <a href="{{url('cargo-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>
@@ -80,10 +80,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentstwo">
               <li>
-                <a href="setor">Cadastrar</a>
+                <a href="{{url('setor')}}">Cadastrar</a>
               </li>
               <li>
-                  <a href="setor-gerenciar">Gerenciar</a>
+                  <a href="{{url('setor-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>
@@ -94,10 +94,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentsthee">
               <li>
-                <a href="rescisao">Calcular</a>
+                <a href="{{url('rescisao')}}">Calcular</a>
               </li>
               <li>
-                  <a href="rescisao-gerenciar">Gerenciar</a>
+                  <a href="{{url('rescisao-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>
@@ -125,7 +125,7 @@
        <span class="titulo">Cargo</span><br><br>
   <div class="row espaço">
       <div class="col-lg-12">
-   <form action="/rh/public/cargo/form_cargo/{{$cargos->idcargo}}" method="post">
+   <form action="/rh/public/cargo/form_cargo/{{$cargos->id}}" method="post">
   <input type="hidden" name="_token" value="{{csrf_token()}}"/>
   <div class="form-group">
     <label for="nomeCargo">Nome:</label>
@@ -134,9 +134,13 @@
   <div class="form-group">
     <label for="exampleSelect1">Setor:</label>
     <select class="form-control" id="setorid" name="setorid">
-     <!-- @foreach($setores as $st)  
-      <option value="{{$st->idsetor}}">{{$st->nomeSetor}}</option>
-      @endforeach -->
+      @foreach($setores as $st)  
+        @if($st->id == $cargos->setor_id)
+          <option value="{{$st->id}}">{{$st->nomeSetor}}</option>
+        @else
+          <option value="{{$st->id}}">{{$st->nomeSetor}}</option>
+        @endif
+      @endforeach
     </select>
   </div>
   <button type="submit" class="btn btn-success">Cadastrar</button>

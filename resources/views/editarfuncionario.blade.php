@@ -52,10 +52,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponents">
               <li>
-                  <a href="funcionario">Cadastrar</a>
+                  <a href="{{url('funcionario')}}">Cadastrar</a>
               </li>
               <li>
-                  <a href="funcionario-gerenciar">Gerenciar</a>
+                  <a href="{{url('funcionario-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>
@@ -66,10 +66,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentsone">
               <li>
-                <a href="cargo">Cadastrar</a>
+                <a href="{{url('cargo')}}">Cadastrar</a>
               </li>
               <li>
-                  <a href="cargo-gerenciar">Gerenciar</a>
+                  <a href="{{url('cargo-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>
@@ -80,10 +80,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentstwo">
               <li>
-                <a href="setor">Cadastrar</a>
+                <a href="{{url('setor')}}">Cadastrar</a>
               </li>
               <li>
-                  <a href="setor-gerenciar">Gerenciar</a>
+                  <a href="{{url('setor-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>
@@ -94,10 +94,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentsthee">
               <li>
-                <a href="rescisao">Calcular</a>
+                <a href="{{url('rescisao')}}">Calcular</a>
               </li>
               <li>
-                  <a href="rescisao-gerenciar">Gerenciar</a>
+                  <a href="{{url('rescisao-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>
@@ -122,19 +122,45 @@
     <div class="content-wrapper py-3">
 
       <div class="container-fluid">
-       <span class="titulo">Edição de Setor</span><br><br>
+          
+       <span class="titulo">Funcionario</span><br><br>
   <div class="row espaço">
       <div class="col-lg-12">
-<form action="/rh/public/setor-gerenciar/editarsetor/form_setor_editar/{{$setores->idsetor}}" method="post">
-         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+  <form action="/rh/public/funcionario/form_funcionario" method="post" >
+  <input type="hidden" name="_token" value="{{csrf_token()}}"/>
   <div class="form-group">
-    <label for="setor">Nome:</label>
-    <input type="text" class="form-control" id="setor" name="setor" value="{{$setores->nomeSetor}}">
+    <label for="nome">Nome:</label>
+    <input type="text" class="form-control" id="nomeFunc" name="nomeFunc" value="{{$funcionarios->nome}}">
   </div>
-  <button type="submit" class="btn btn-success">Salvar Alterações</button>
+  <div class="form-group">
+    <label for="exampleInputPassword1">CPF:</label>
+    <input type="text" class="form-control" id="cpf" name="cpf" value="{{$funcionarios->cpf}}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Salário:</label>
+    <input type="text" class="form-control" id="sal" name="sal" value="{{$funcionarios->salario}}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Data de Entrada:</label>
+    <input type="date" class="form-control" id="dataent" name="dataent" value="{{$funcionarios->datadeentrada}}">
+  </div>
+  <div class="form-group">
+    <label for="exampleSelect1">Cargo:</label>
+    <select class="form-control" id="cargo" name="cargo">
+      @foreach($cargos as $cr)
+        @if($cr->id == $funcionarios->cargo_id)
+            <option value="{{$cr->id}}" selected>{{$cr->nomeCargo}}</option>
+        @else
+            <option value="{{$cr->id}}">{{$cr->nomeCargo}}</option>
+        @endif
+      @endforeach
+    </select>
+  </div>
+  <button type="submit" class="btn btn-success">Cadastrar</button>
 </form>
       </div>
-  </div>            
+  </div>  
+       
       </div>
       <!-- /.container-fluid -->
 

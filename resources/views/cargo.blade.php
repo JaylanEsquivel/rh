@@ -13,7 +13,7 @@
     <label for="exampleSelect1">Setor:</label>
     <select class="form-control" id="setorid" name="setorid">
       @foreach($setores as $st)  
-      <option value="{{$st->idsetor}}">{{$st->nomeSetor}}</option>
+      <option value="{{$st->id}}">{{$st->nomeSetor}}</option>
       @endforeach
     </select>
   </div>

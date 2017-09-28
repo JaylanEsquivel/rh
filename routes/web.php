@@ -9,18 +9,18 @@ Route::get('/index','ViewController@Exibirindex');
 
 Route::get('/funcionario','FuncionarioController@ExibirFuncionario');
 Route::get('/funcionario-gerenciar','FuncionarioController@ExibirFuncionarioGerenciar');
-Route::get('/funcionario-gerenciar/editarfuncionario/(id?)','FuncionarioController@Editarfuncionario');
-Route::get('/funcionario-gerenciar/deletarfuncionario/(id?)','FuncionarioController@Deletarfuncionario');
+Route::get('/funcionario-gerenciar/editarfuncionario/{id}','FuncionarioController@Editarfuncionario');
+Route::get('/funcionario-gerenciar/deletarfuncionario/{id}','FuncionarioController@Deletarfuncionario');
 
 Route::get('/setor','SetorController@ExibirSetor');
 Route::get('/setor-gerenciar','SetorController@ExibirSetorGerenciar');
-Route::get('/setor-gerenciar/editarsetor/{id?}', 'SetorController@EditarSetor');
-Route::get('/setor-gerenciar/deletarsetor/{id?}', 'SetorController@DeletarSetor');
+Route::get('/setor-gerenciar/editarsetor/{id}', 'SetorController@EditarSetor');
+Route::get('/setor-gerenciar/deletarsetor/{id}', 'SetorController@DeletarSetor');
 
 Route::get('/cargo','CargoController@ExibirCargo');
 Route::get('/cargo-gerenciar','CargoController@ExibirCargoGerenciar');
-Route::get('/cargo-gerenciar/editarcargo/(id?)','CargoController@EditarCargo');
-Route::get('/cargo-gerenciar/deletarcargo/(id?)','CargoController@DeletarCargo');
+Route::get('/cargo-gerenciar/editarcargo/{id}','CargoController@EditarCargo');
+Route::get('/cargo-gerenciar/deletarcargo/{id}','CargoController@DeletarCargo');
 
 Route::get('/rescisao','RescisaoController@ExibirRescisao');
 Route::get('/rescisao-gerenciar','RescisaoController@ExibirRescisaoGerenciar');

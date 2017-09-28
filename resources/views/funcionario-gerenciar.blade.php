@@ -19,15 +19,15 @@
   <tbody>
    @foreach ($funcionarios as $fc)
     <tr>
-      <th scope="row">{{$fc->idfuncionario}}</th>
+      <th scope="row">{{$fc->id}}</th>
       <td>{{$fc->nome}}</td>
       <td>{{$fc->cpf}}</td>
       <td>{{$fc->salario}}</td>
-      <td>{{$fc->cargo_idcargo}}</td>
+      <td>{{$fc->cargo->nomeCargo}}</td>
       <td>{{$fc->datadeentrada}}</td>
       <td>{{$fc->datadesaida}}</td>
       <td style="text-align: center">
-          <a href="funcionario-gerenciar/editarfuncionario/{{$fc->idfuncionario}}" class="btn btn-info">Editar</a>&nbsp;<a href="funcionario-gerenciar/deletarfuncionario/{{$fc->idfuncionario}}" class="btn btn-danger">Deleta</a>
+          <a href="funcionario-gerenciar/editarfuncionario/{{$fc->id}}" class="btn btn-info">Editar</a>&nbsp;<a href="funcionario-gerenciar/deletarfuncionario/{{$fc->id}}" class="btn btn-danger">Deleta</a>
       </td>
     </tr>
    @endforeach

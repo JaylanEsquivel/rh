@@ -16,11 +16,11 @@
   <tbody>
     @foreach ($cargos as $cr)  
     <tr>
-      <th scope="row">{{$cr->idcargo}}</th>
+      <th scope="row">{{$cr->id}}</th>
       <th>{{$cr->nomeCargo}}</th>
-      <th>{{$cr->setor_idsetor}}</th>
+      <th>{{$cr->setor_id}}</th>
       <td style="text-align: center">
-          <a href="cargo-gerenciar/editarcargo/{{$cr->idcargo}}" class="btn btn-info">Editar</a>&nbsp;<a href="cargo-gerenciar/deletarcargo/{{$cr->idcargo}}" class="btn btn-danger">Deleta</a>
+          <a href="cargo-gerenciar/editarcargo/{{$cr->id}}" class="btn btn-info">Editar</a>&nbsp;<a href="cargo-gerenciar/deletarcargo/{{$cr->id}}" class="btn btn-danger">Deleta</a>
       </td>
     </tr>
     @endforeach

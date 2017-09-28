@@ -52,10 +52,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponents">
               <li>
-                  <a href="funcionario">Cadastrar</a>
+                  <a href="{{url('funcionario')}}">Cadastrar</a>
               </li>
               <li>
-                  <a href="funcionario-gerenciar">Gerenciar</a>
+                  <a href="{{url('funcionario-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>
@@ -66,10 +66,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentsone">
               <li>
-                <a href="cargo">Cadastrar</a>
+                <a href="{{url('cargo')}}">Cadastrar</a>
               </li>
               <li>
-                  <a href="cargo-gerenciar">Gerenciar</a>
+                  <a href="{{url('cargo-gerenciar')}}">Gerenciar</a>
               </li>
             </ul>
           </li>

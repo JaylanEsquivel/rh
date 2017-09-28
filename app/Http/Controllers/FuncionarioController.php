@@ -16,6 +16,11 @@ class FuncionarioController extends Controller {
         $funcionario = Funcionario::all();
         return view('funcionario-gerenciar', ['funcionarios' => $funcionario ]);
     }
+    public function EditarFuncionario($id) {
+        $cargos = Cargo::all();
+        $func = Funcionario::find($id);
+        return view('editarfuncionario', ['funcionarios' => $func, 'cargos' => $cargos]);        
+    }
     public function CadastrarFuncionario() {
         $input = \Request::all();
         $nome = $input['nomeFunc'];
@@ -29,7 +34,7 @@ class FuncionarioController extends Controller {
         $novo->cpf = $cpf;
         $novo->salario = $salario;
         $novo->datadeentrada = $data;
-        $novo->cargo_idcargo = $cargo;
+        $novo->cargo_id = $cargo;
         
         $novo->save();
         
@@ -50,7 +55,7 @@ class FuncionarioController extends Controller {
         $novo->cpf = $cpf;
         $novo->salario = $salario;
         $novo->datadeentrada = $data;
-        $novo->cargo_idcargo = $cargo;
+        $novo->cargo_id = $cargo;
         
         $novo->save();
         

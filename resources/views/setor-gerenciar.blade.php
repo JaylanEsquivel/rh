@@ -15,10 +15,10 @@
   <tbody>
     @foreach ($setores as $st)
     <tr>
-      <th scope="row">{{$st->idsetor}}</th>
+      <th scope="row">{{$st->id}}</th>
       <th>{{$st->nomeSetor}}</th>
       <td style="text-align: center">
-          <a href="setor-gerenciar/editarsetor/{{$st->idsetor}}" class="btn btn-info">Editar</a>&nbsp;<a href="setor-gerenciar/deletarsetor/{{$st->idsetor}}" class="btn btn-danger">Deleta</a>
+          <a href="setor-gerenciar/editarsetor/{{$st->id}}" class="btn btn-info">Editar</a>&nbsp;<a href="setor-gerenciar/deletarsetor/{{$st->id}}" class="btn btn-danger">Deleta</a>
       </td>
     </tr>
     @endforeach

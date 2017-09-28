@@ -22,20 +22,20 @@ class CargoController extends Controller{
         
         $novo = new Cargo;
         $novo->nomeCargo = $nomecargo;
-        $novo->setor_idsetor = $setorid;
+        $novo->setor_id = $setorid;
         $novo->save();
         
         return redirect('/cargo');
     }
     public function EditarCargo($id) {
+        $setor = Setor::all();
         $cargo = Cargo::find($id);
-        return view('editarcargo', ['cargos' => $cargo]);        
+        return view('editarcargo', ['cargos' => $cargo, 'setores' => $setor]);        
     }
     public function DeletarCargo($id){
         $cargo = Cargo::find($id);
         
         $cargo->delete();      
         return redirect('/cargo-gerenciar');
-        
     }
 }
