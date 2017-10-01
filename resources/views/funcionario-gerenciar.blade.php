@@ -12,7 +12,6 @@
       <th>Salário</th>
       <th>Cargo</th>
       <th>Data de entrada</th>
-      <th>Data de saida</th>
       <th>Ações</th>
     </tr>
   </thead>
@@ -25,9 +24,10 @@
       <td>{{$fc->salario}}</td>
       <td>{{$fc->cargo->nomeCargo}}</td>
       <td>{{$fc->datadeentrada}}</td>
-      <td>{{$fc->datadesaida}}</td>
       <td style="text-align: center">
-          <a href="funcionario-gerenciar/editarfuncionario/{{$fc->id}}" class="btn btn-info" title="EDITAR"><img src="{{url('img/Pencil.png')}}" width="25" class="img-responsive" /></a>&nbsp;<a href="funcionario-gerenciar/deletarfuncionario/{{$fc->id}}" class="btn btn-danger" title="EXCLUIR" onclick=" return deleta();"><img src="{{url('img/lixe.png')}}" width="25" class="img-responsive" /></a>
+          <a href="funcionario-gerenciar/editarfuncionario/{{$fc->id}}" class="btn btn-info" title="EDITAR"><img src="{{url('img/Pencil.png')}}" width="25" class="img-responsive" /></a>&nbsp;
+          <a href="funcionario-gerenciar/deletarfuncionario/{{$fc->id}}" class="btn btn-danger" title="EXCLUIR" onclick=" return deleta();"><img src="{{url('img/lixe.png')}}" width="25" class="img-responsive" /></a>
+          <a href="{{url("rescisao")}}/{{$fc->id}}" class="btn btn-warning" title="CALCULAR RESCISÃO"><img src="{{url('img/CAL.png')}}" width="25" class="img-responsive" /></a>
       </td>
     </tr>
    @endforeach

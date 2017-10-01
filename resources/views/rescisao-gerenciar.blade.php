@@ -7,11 +7,8 @@
     <thead>
     <tr class="bg-warning">
       <th>Id</th>
-      <th>Nome</th>
-      <th>Cpf</th>
-      <th>Salário</th>
-      <th>Data de entrada</th>
-      <th>Data de saida</th>
+      <th>Data rescisao</th>
+      <th>Funcionario</th>
       <th>Ações</th>
     </tr>
   </thead>
@@ -20,11 +17,9 @@
       <th scope="row">1</th>
       <td>Mark</td>
       <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
       <td style="text-align: center">
-          <a href="#" class="btn btn-info">Editar</a>&nbsp;<a href="#" class="btn btn-danger">Deleta</a>
+          <a href="/" class="btn btn-success" title="VISUALIZAR"><img src="{{url('img/lupa.png')}}" width="25" class="img-responsive" /></a>&nbsp;
+          <a href="/" class="btn btn-danger" title="EXCLUIR" onclick=" return deleta();"><img src="{{url('img/lixe.png')}}" width="25" class="img-responsive" /></a>
       </td>
     </tr>
   </tbody>

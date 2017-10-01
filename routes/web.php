@@ -22,7 +22,8 @@ Route::get('/cargo-gerenciar','CargoController@ExibirCargoGerenciar');
 Route::get('/cargo-gerenciar/editarcargo/{id}','CargoController@EditarCargo');
 Route::get('/cargo-gerenciar/deletarcargo/{id}','CargoController@DeletarCargo');
 
-Route::get('/rescisao','RescisaoController@ExibirRescisao');
+Route::get('/rescisao/{id}','RescisaoController@calcularRescisao');
+
 Route::get('/rescisao-gerenciar','RescisaoController@ExibirRescisaoGerenciar');
 
 // POST'S
@@ -38,6 +39,7 @@ Route::post('/cargo-gerenciar/editarcargo/form_cargo_editar/{id}', 'CargoControl
 Route::post('/setor/form_setor', 'SetorController@CadastrarSetor');
 Route::post('/setor-gerenciar/editarsetor/form_setor_editar/{id}', 'SetorController@UpdateSetor');
 
+Route::post('/rescisao/form_rescisao', 'RescisaoController@visualizaRescisao');
 Route::post('/rescisao/form_rescisao', 'RescisaoController@RegistrarRescisao');
 
 

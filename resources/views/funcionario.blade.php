@@ -11,11 +11,11 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">CPF:</label>
-    <input type="text" class="form-control" id="cpf" name="cpf" maxlength="14" placeholder="99999999999">
+    <input type="text" class="form-control" id="cpf" name="cpf" data-mask="000.000.000-00" maxlength="14" placeholder="000.000.000-00">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Salário:</label>
-    <input type="text" class="form-control" id="sal" name="sal" placeholder="2500">
+    <input type="text" class="form-control" id="sal" name="sal" data-mask="000.000.000.000.000,00" data-mask-reverse="true" placeholder="2.500,00">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Data de Entrada:</label>

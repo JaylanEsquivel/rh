@@ -12,21 +12,21 @@
     <meta name="author" content="">
     <title>Sistema de RH</title>
 
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="{{url("css/style.css")}}" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{url("vendor/bootstrap/css/bootstrap.min.css")}}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{url("vendor/font-awesome/css/font-awesome.min.css")}}" rel="stylesheet" type="text/css">
 
     <!-- Plugin CSS -->
-    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="{{url("vendor/datatables/dataTables.bootstrap4.css")}}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="{{url("css/sb-admin.css")}}" rel="stylesheet">
     
-        <script src="js/respostas.js"></script>
+        <script src="{{url("js/respostas.js")}}"></script>
 
 
   </head>
@@ -42,7 +42,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
           <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
-              <a class="nav-link" href="index">
+              <a class="nav-link" href="{{url("index")}}">
               <i class="fa fa-fw fa-dashboard"></i>
               <span class="nav-link-text">
                 Painel de Controle</span>
@@ -96,9 +96,6 @@
               <span class="nav-link-text">Rescisão</span>
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponentsthee">
-              <li>
-                <a href="{{url('rescisao')}}">Calcular</a>
-              </li>
               <li>
                   <a href="{{url('rescisao-gerenciar')}}">Gerenciar</a>
               </li>
@@ -161,18 +158,20 @@
     </div>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{url("vendor/jquery/jquery.min.js")}}"></script>
+    <script src="{{url("vendor/popper/popper.min.js")}}"></script>
+    <script src="{{url("vendor/bootstrap/js/bootstrap.min.js")}}"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="{{url("vendor/jquery-easing/jquery.easing.min.js")}}"></script>
+    <script src="{{url("vendor/chart.js/Chart.min.js")}}"></script>
+    <script src="{{url("vendor/datatables/jquery.dataTables.js")}}"></script>
+    <script src="{{url("vendor/datatables/dataTables.bootstrap4.js")}}"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/sb-admin.min.js"></script>
+    <script src="{{url("js/sb-admin.min.js")}}"></script>
+   <script src="{{url("js/jquery.mask.min.js")}}"></script>
+
     
 
   </body>
