@@ -40,7 +40,7 @@ Route::post('/setor/form_setor', 'SetorController@CadastrarSetor');
 Route::post('/setor-gerenciar/editarsetor/form_setor_editar/{id}', 'SetorController@UpdateSetor');
 
 Route::post('/rescisao/form_rescisao', 'RescisaoController@visualizaRescisao');
-Route::post('/rescisao/form_rescisao', 'RescisaoController@RegistrarRescisao');
+//Route::post('/rescisao/form_rescisao', 'RescisaoController@RegistrarRescisao');
 
 
 
