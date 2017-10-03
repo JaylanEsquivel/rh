@@ -26,3 +26,29 @@ a:link{ text-decoration: none !important;}
 a:visited{ text-decoration: none !important;}
 a:hover{ text-decoration: none !important;}
 a:active{ text-decoration: none !important;}
+.topo{
+    border: solid 1px #000;
+}
+.topo-font2{
+    font-size: 18px;
+    font-weight: bold;
+}
+.topo-font{
+    font-size: 15px;
+    font-weight: bold;
+}
+.rescisao-resumo{
+    padding-left: 15px;
+    padding-top: 10px;
+    border-right: solid 1px #000;
+    border-top: solid 1px #000;
+}
+.rescisao-resumo-two{
+    padding-top: 10px;
+    border-top: solid 1px #000;
+        border-right: solid 1px #000;
+
+}
+.dados{
+    padding-top: 0px;
+}

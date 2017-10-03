@@ -7,17 +7,17 @@ use App\Models\Funcionario;
 
 class RescisaoController extends Controller {
 
-    public function calcularRescisao($id) {
+    public function calcularRescisao($id) { // exibi a view com o funcionario que vc ira calcular a rescisao
         $func = Funcionario::find($id);
         return view('rescisao', ['func' => $func ]);
     }
-    public function ExibirRescisaoGerenciar() {
+    public function ExibirRescisaoGerenciar() {  //  exibi apenas as rescisoes salvas no bd 
         return view('rescisao-gerenciar');
     }
-    public function RegistrarRescisao() {
+    public function RegistrarRescisao() { // grava as informaçoes da rescisao no bd
         
     }
-    public function Calcularmes($valor) {
+    public function Calcularmes($valor) {  // faz o calculo da diferença de meses entre uma data e outra
         $ano = date('Y');
         $data = new \DateTime("$ano-01-01");
         $datasaida = new \DateTime($valor);
@@ -26,7 +26,7 @@ class RescisaoController extends Controller {
         
         return $dif->format('%m');
     }
-    public function DecimoTeceiro($valor, $salario) {
+    public function DecimoTeceiro($valor, $salario) { // calcula o valor de decimo terceiro a ser recebido
         $rescisao = ($valor/12)*$salario;
         return $rescisao;        
     }
@@ -36,7 +36,7 @@ class RescisaoController extends Controller {
     public function Multa() {
         
     }
-    public function visualizaRescisao() {
+    public function visualizaRescisao() { //função principal que traz tods os calculos e chama a view de exibição
       //RECEBE INPUTS DA TELA VISUAL -->  
         $input = \Request::all();     
         $idfunc = $input['id']; 
