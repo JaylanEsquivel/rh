@@ -2,10 +2,14 @@
  @section('principal')
  <div class="row">
      <div class="col-lg-12">
-         <span class="titulo">Rescisão Detalhada</span><br>
-         <form action="" method="post">
-             <input class="form-control" name="resc" id="resc" value="{{$decimo}}" disabled="disabled"/>
-             
+         <span class="titulo">Rescisão Detalhada</span><br><br>
+         <form action="{{url("rescisao/form_rescisao/salvar")}}" method="post">
+               <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+             <input class="form-control" type="hidden" name="dec" id="dec" value="{{$decimo}}"/>
+             <input class="form-control" type="hidden" name="ferias" id="ferias" value="{{$ferias}}"/>
+             <input class="form-control" type="hidden" name="multa" id="multa" value="{{$multa}}"/>
+             <input class="form-control" type="hidden" name="id" id="id" value="{{$id}}"/>
+             <input class="form-control" type="hidden" name="dt" id="dt" value="{{$dtsaida}}"/>
            <div class="container">
              <div class="row">
                 <div class="col-lg-12 topo">
@@ -24,11 +28,11 @@
                         </div>
                         <div class="col-lg-4 rescisao-resumo">
                             <div class="dados">
-                               <span>Jaylan</span><BR>
-                                <span>074.258.364-07</span><BR>
-                                <span>01/01/16</span><br>
-                                <span>01/01/17</span><br>
-                                <span>1000</span><br>
+                               <span>{{$nome}}</span><BR>
+                                <span>{{$cpf}}</span><BR>
+                                <span>{{$dtentrada}}</span><br>
+                                <span>{{$dtsaida}}</span><br>
+                                <span><b>R$</b>{{$sal}}</span><br>
                             </div>
                         </div>
                         <div class="col-lg-2 rescisao-resumo-two" >
@@ -41,10 +45,10 @@
                         </div>
                         <div class="col-lg-4 rescisao-resumo-two">
                             <div class="dados">
-                               <span>755.55</span><BR>
-                                <span>2750</span><BR>
-                                <span>1000</span><br>
-                                <span>4500</span><br>
+                               <span><b>R$</b>{{$decimo}}</span><BR>
+                                <span><b>R$</b>{{$ferias}}</span><BR>
+                                <span><b>R$</b>{{$multa}}</span><br>
+                                <span><b>R$</b>{{$valorgeral}}</span><br>
                             </div>
                         </div>
                     </div>
