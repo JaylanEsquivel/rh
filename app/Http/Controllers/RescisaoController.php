@@ -12,7 +12,8 @@ class RescisaoController extends Controller {
         return view('rescisao', ['func' => $func ]);
     }
     public function ExibirRescisaoGerenciar() {  //  exibi apenas as rescisoes salvas no bd 
-        return view('rescisao-gerenciar');
+        $rescisao = Rescisao::all();
+        return view('rescisao-gerenciar', ['resc' => $rescisao ]);
     }
     public function RegistrarRescisao() { // grava as informaçoes da rescisao no bd
         $input = \Request::all();
@@ -31,9 +32,10 @@ class RescisaoController extends Controller {
         
         $novo->save();
         
-        redirect('/index');
+        return redirect('/index');
     }
     public function Calcularmes($valor) {  // faz o calculo da diferença de meses entre uma data e outra
+        
         $ano = date('Y');
         $data = new \DateTime("$ano-01-01");
         $datasaida = new \DateTime($valor);
@@ -41,24 +43,35 @@ class RescisaoController extends Controller {
         $dif = $data->diff($datasaida);
         
         return $dif->format('%m');
+           
+    }
+    public function Calcularmestwo($dataentrada,$datasaida) { // faz o calculo da diferen�a da data que saiu
+        
+        $e = new \DateTime($dataentrada);
+        $s = new \DateTime($datasaida);
+        
+        $diferenca = $e->diff($s);
+        
+        return ($diferenca->y*12) + $diferenca->m;
+        
     }
     public function DecimoTeceiro($valor, $salario) { // calcula o valor de decimo terceiro a ser recebido
         $rescisao = ($valor/12)*$salario;
-        return $rescisao;        
+        return $rescisao;
     }
     public function Ferias($dif,$salario) {
         if($dif >= 12){
-            $ferias = $salario + ($salario * 3);
-            $diferença = $dif - 12;
-            $ferias += ($diferença / 12) * $salario;
+            $ferias = $salario + ($salario / 3);
+            $diferenca = $dif - 12;
+            $ferias += ($diferenca / 12) * $salario;
             return $ferias;
         }else{
-            $ferias = $salario + ($salario * 3);
+            $ferias = $salario + ($salario / 3);
             return $ferias;
         }
     }
-    public function Multa($dif,$salario) {
-        $calc_one = (( $dif*0.08 )* $salario) * 0.4;
+    public function Multa($datadif_inteiro,$salario) {
+        $calc_one = ( $salario * (8 / 100)*$datadif_inteiro)*(40/100);
         return $calc_one;
     }
     public function Geralsoma($A,$B,$C) {
@@ -82,10 +95,11 @@ class RescisaoController extends Controller {
       // CALCULA A DIFERENCIA ENTRE A DATA DO INICIO DO ANO ATE DATA DE SAIDA -->
       // QUANDO CHAMA FUNÇÃO DA MSM CONTROLLER CHAMA COM THIS
         $datadif = $this->Calcularmes($data_saida);
+        $datadif_inteiro = $this->Calcularmestwo($data_saida,$entrada);
       // CALCULA A DIFERENCIA ENTRE A DATA DO INICIO DO ANO ATE DATA DE SAIDA -->
         $decimo_ter = $this->DecimoTeceiro($datadif,$salario);
-        $multa = $this->Multa($datadif,$salario);
-        $ferias = $this->Ferias($datadif,$salario);
+        $multa = $this->Multa($datadif_inteiro,$salario);
+        $ferias = $this->Ferias($datadif_inteiro,$salario);
         $valorgeral = $this->Geralsoma($multa,$ferias,$decimo_ter);
                 
         return view('calculo', ['id' => $idfunc, 'decimo' => $decimo_ter, 'nome' => $nome, 'cpf' =>$cpf, 'sal' => $salario, 'dtentrada' => $entrada, 'dtsaida' => $data_saida, 'multa' => $multa, 'ferias' => $ferias, 'valorgeral' => $valorgeral ]);

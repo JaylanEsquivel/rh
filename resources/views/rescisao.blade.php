@@ -15,7 +15,7 @@
             </div>
             <div class="col-md-6">
                 <span>Data de Saida:</span><br>
-                <input class="form-control" id="data" name="data" type="date" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="form-control" id="data" name="data" type="date" required="required" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button type="submit" class="btn btn-outline-danger">Calcular Rescisão</button>
             </div>
         </form>
