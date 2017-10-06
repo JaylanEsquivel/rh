@@ -45,7 +45,7 @@ class RescisaoController extends Controller {
         return $dif->format('%m');
            
     }
-    public function Calcularmestwo($dataentrada,$datasaida) { // faz o calculo da diferença da data que saiu
+    public function Calcularmestwo($dataentrada,$datasaida) { // faz o calculo da diferenï¿½a da data que saiu
         
         $e = new \DateTime($dataentrada);
         $s = new \DateTime($datasaida);
@@ -60,10 +60,10 @@ class RescisaoController extends Controller {
         return $rescisao;
     }
     public function Ferias($dif,$salario) {
-        if($dif >= 12){
+        if($dif > 12){
             $ferias = $salario + ($salario / 3);
             $diferenca = $dif - 12;
-            $ferias += ($diferenca / 12) * $salario;
+            $ferias = ($diferenca / 12) * $ferias;
             return $ferias;
         }else{
             $ferias = $salario + ($salario / 3);
